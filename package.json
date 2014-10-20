@@ -2,6 +2,9 @@
   "name": "swamp-os",
   "version": "0.0.1",
   "dependencies": {},
+  "scripts": {
+     "postinstall": "bower install"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-concurrent": "~0.4.1",
