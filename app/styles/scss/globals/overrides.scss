@@ -1,0 +1,34 @@
+.ps-container {
+
+  &:hover {
+    .ps-scrollbar-y-rail {
+      @include opacity(0.5);
+    }
+  }
+
+  .ps-scrollbar-y-rail {
+    @include opacity(0.5);
+    width: 5px;
+    background: transparent;
+
+    &:hover {
+      @include opacity(1);
+      background: transparent;
+
+      .ps-scrollbar-y {
+        @include opacity(1);
+        width: 5px;
+
+        &:hover {
+          @include opacity(1);
+        }
+      }
+    }
+
+    .ps-scrollbar-y {
+      @include opacity(1);
+      @include border-radius($radius);
+      width: 5px;
+    }
+  }
+}

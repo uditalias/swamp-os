@@ -1,0 +1,167 @@
+.window {
+  @include transition(box-shadow 200ms, width 200ms, height 200ms, top 200ms, left 200ms);
+  @include border-radius($radius);
+  @include box-shadow(0px 0px  10px rgba(0,0,0,0.3));
+  border-bottom:solid 1px #6b789d;
+  background: #7485ba;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.in {
+  }
+
+  &.ui-resizable-resizing {
+    @include transition(width 0ms, height 0ms);
+  }
+
+  &.ui-draggable-dragging {
+    @include transition(left 0ms, top 0ms);
+  }
+
+  &.focused {
+    @include box-shadow(0px 0px  30px rgba(0,0,0,0.4));
+  }
+
+  &.minimized {
+    width: auto !important;
+    height: auto !important;
+
+    .window-title {
+      @include border-radius($radius);
+    }
+  }
+
+  &.zoomed {
+    @include border-radius(0);
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+
+    .window-title {
+      @include border-radius(0 0 0 0);
+    }
+
+    .window-content-wrapper {
+      @include border-radius(0 0 0 0);
+    }
+  }
+
+  .window-title-wrapper {
+    position: relative;
+  }
+
+  .window-title {
+    @include border-radius($radius $radius 0 0);
+    width:100%;
+    border-top: solid 1px adjust-lightness($color-dark-gray, 2%);
+    background: $color-dark-gray;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-alt-white;
+    position: relative;
+
+    .title-text {
+      padding: 5px;
+    }
+
+    [class^=indicator-] {
+      @include text-shadow(0 0 15px);
+      font-size: 8px;
+      padding: 5px 10px;
+    }
+
+    .indicator-green {
+      color: $color-green;
+    }
+
+    .indicator-red {
+      color: $color-red;
+    }
+
+    .indicator-yellow {
+      color: $color-yellow;
+    }
+
+    .indicator-blink {
+      @include animation(animate-fade-in-out 1000ms ease-in infinite forwards);
+    }
+
+    .window-action {
+      @include transition(opacity 200ms);
+      @include opacity(0.5);
+      color: $color-alt-white;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-left: solid 1px $color-darker-gray;
+
+      i {
+        min-width: 11px;
+        text-align: center;
+      }
+
+      &:last-child {
+        @include border-radius(0 $radius 0 0);
+      }
+
+      &:hover {
+        background: $color-darker-gray;
+        @include opacity(1);
+      }
+    }
+  }
+
+  .window-menu-wrapper {
+    z-index: 90;
+
+    .window-menu {
+      background: adjust-lightness($color-darker-gray, 10%);
+
+      .menu-tree ul li:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .window-prompt {
+    background: rgba(0,0,0,0.3);
+    z-index: 2500;
+
+    .window-prompt-inner {
+      position: relative;
+
+      .prompt {
+        @include transition(all 200ms);
+        @include transform(perspective(600px) rotateX(90deg));
+        @include transform-origin(50% 50px);
+        @include border-radius(0 0 $radius $radius);
+        @include box-shadow(0px 0px  30px rgba(0,0,0,0.4));
+        background: $color-light-blue;
+        border-bottom: solid 1px #6b789d;
+        max-width: 50%;
+        position: relative;
+        top: -50px;
+
+        &.in {
+          @include transform(perspective(600px) rotateX(0deg));
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .window-content-wrapper {
+    @include border-radius(0 0 $radius $radius);
+    width: 100%;
+    background: $color-light-blue;
+    overflow: hidden;
+    position: relative;
+
+    .cover {
+      z-index: 80;
+      display: none;
+    }
+  }
+}

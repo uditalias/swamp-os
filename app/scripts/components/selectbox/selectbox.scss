@@ -1,0 +1,74 @@
+.select-box {
+
+  position: relative;
+
+  .select-box-label {
+    @include border-radius($radius);
+    min-width: 120px;
+    text-align: left;
+
+    i {
+      height: 12px;
+    }
+  }
+
+  &.active {
+
+    .select-box-label {
+      @include border-radius($radius $radius 0 0);
+      @include box-shadow(inset 0 3px 5px #2b3240);
+      border-bottom-color: #2b3240;
+    }
+
+    ul {
+      display: block;
+    }
+
+    .fa-caret-down {
+      display: none;
+    }
+
+    .fa-caret-up {
+      display: block;
+    }
+  }
+
+  .fa-caret-down {
+    display: block;
+  }
+
+  .fa-caret-up {
+    display: none;
+  }
+
+  ul {
+    @include border-radius($radius 0 $radius $radius);
+    @include box-shadow(0 5px 20px rgba(0,0,0,.5));
+    background: #2b3240;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    min-width: 120%;
+    z-index: 1;
+
+    li {
+      color: $color-alt-white;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 14px;
+      &:hover, &.active {
+        background-color: $color-dark-gray;
+      }
+      &:last-child {
+        @include border-radius(0 0 $radius $radius);
+      }
+      &:first-child {
+        @include border-radius($radius 0 0 0);
+      }
+    }
+  }
+}

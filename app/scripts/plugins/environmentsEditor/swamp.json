@@ -1,0 +1,19 @@
+{
+    "name": "internal-environments-editor",
+    "version": "*",
+    "main": "app/index.html",
+    "config": {
+        "type": "window",
+        "title": "Environments Editor",
+        "useSwampStyle": true,
+        "window": {
+            "size": {
+                "width": 650,
+                "height": 400
+            },
+            "maximizable": false,
+            "minimizable": true,
+            "resizable": false
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.aggregated-data-chart {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-top: dashed 1px #fff;
+  border-bottom: solid 1px #fff;
+
+  .no-data {
+    color: $color-alt-white;
+    background: rgba(0,0,0,0.2);
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+
+    li {
+      float: left;
+      height: 100%;
+      position: relative;
+
+      &:hover {
+        background: rgba(0,0,0,0.2);
+      }
+
+      >div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 1px;
+      }
+    }
+  }
+}

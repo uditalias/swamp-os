@@ -1,0 +1,77 @@
+.swamp-service-window-content {
+  position: relative;
+
+  .service-header {
+    background: #242a37;
+    position: relative;
+
+    .service-photo {
+      @include border-radius($radius);
+      @include box-shadow(0 1px 1px rgba(0,0,0,0.3));
+      width: 25px;
+      height: 25px;
+    }
+
+    .service-desc {
+      margin-left: 10px;
+      color: $color-alt-white;
+    }
+  }
+
+  .service-data {
+
+    .data-row {
+      border-bottom: solid 1px $color-alt-white;
+
+      .data-col {
+        color: $color-dark-gray;
+        padding: 10px;
+        border-right: solid 1px $color-alt-white;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        >div:first-child {
+          min-width: 100px;
+          font-weight: 400;
+          color: adjust-lightness($color-dark-gray, 10%);
+        }
+      }
+    }
+  }
+
+  .service-performance {
+
+    position: relative;
+    @include box-shadow(inset 0 2px 1px rgba(0,0,0,0.1));
+    background: #242a37;
+
+    .chart-wrapper {
+
+      &.cpu-data {
+
+      }
+
+      &.memory-data {
+
+      }
+
+    }
+  }
+
+  .service-footer {
+    @include border-radius(0 0 $radius $radius);
+    @include box-shadow(0 -2px 1px rgba(0,0,0,0.1));
+    border-top: solid 1px adjust-lightness($color-dark-gray, 8%);
+    background: adjust-lightness($color-darker-gray, 10%);
+    width: 100%;
+
+    .service-actions {
+      button {
+        min-width: 60px;
+        font-size: 14px;
+      }
+    }
+  }
+}

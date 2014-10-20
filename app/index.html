@@ -1,0 +1,39 @@
+<!--
+
+     ____    __      __  ______           ____
+    /\  _`\ /\ \  __/\ \/\  _  \  /'\_/`\/\  _`\
+    \ \,\L\_\ \ \/\ \ \ \ \ \L\ \/\      \ \ \L\ \
+     \/_\__ \\ \ \ \ \ \ \ \  __ \ \ \__\ \ \ ,__/
+       /\ \L\ \ \ \_/ \_\ \ \ \/\ \ \ \_/\ \ \ \/
+       \ `\____\ `\___x___/\ \_\ \_\ \_\\ \_\ \_\
+        \/_____/'\/__//__/  \/_/\/_/\/_/ \/_/\/_/
+
+    Swamp is a tool for running, managing and monitoring processes. jump in!
+
+    By Udi Talias (udi.talias@gmail.com)
+
+    https://github.com/uditalias
+
+    ---
+
+    For forking, contributing, issues > https://github.com/uditalias/swamp
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Swamp OS</title>
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="icon" type="image/png" href="/assets/images/favicon.png?rev=2">
+    </head>
+    <body>
+        <div class="app-container"></div>
+        <script data-main="scripts/app" src="/lib/requirejs/require.js"></script>
+        <script>
+            //<![CDATA[
+            var socketConnectionString = "<%= socketConnectionString %>";
+            var swampVersion = "<%= swampVersion %>";
+            //]]>
+        </script>
+    </body>
+</html>

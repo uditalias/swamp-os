@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+input {
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+.app-container {
+  width:100vw;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.spread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.hightlight {
+  @include border-radius($radius);
+  background: adjust-lightness($color-yellow, 30%);
+  border-bottom: dashed 1px adjust-lightness($color-dark-gray, 30%);
+  padding: 0 2px;
+}

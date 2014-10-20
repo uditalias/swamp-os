@@ -1,0 +1,26 @@
+.application-prompt {
+  background: rgba(0,0,0,0.3);
+  z-index: 2147483647;
+
+  .application-prompt-inner {
+    position: relative;
+
+    .prompt {
+      @include transition(all 200ms);
+      @include transform(perspective(600px) rotateX(90deg));
+      @include transform-origin(50% 50px);
+      @include border-radius(0 0 $radius $radius);
+      @include box-shadow(0px 0px  30px rgba(0,0,0,0.4));
+      background: $color-light-blue;
+      border-bottom: solid 1px #6b789d;
+      max-width: 50%;
+      position: relative;
+      top: -50px;
+
+      &.in {
+        @include transform(perspective(600px) rotateX(0deg));
+        top: 0;
+      }
+    }
+  }
+}

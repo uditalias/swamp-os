@@ -1,0 +1,57 @@
+.top-actions {
+
+  position: relative;
+
+  .action-trigger {
+    @include transition(all 100ms);
+    @include opacity(0.5);
+    font-size: 14px;
+    color: $color-alt-white;
+    cursor: pointer;
+    padding: 0 10px;
+    background: transparent;
+    position: relative;
+
+    &:hover, &.active {
+      background: $color-darker-gray;
+      @include opacity(1);
+    }
+
+    &.active {
+      .action-view {
+        display: block;
+      }
+    }
+
+    .action-view {
+      @include box-shadow(0 5px 20px rgba(0,0,0,.5));
+      @include border-radius(0 0 $radius $radius);
+      position: absolute;
+      min-width: 200px;
+      top: 100%;
+      right: 0;
+      display: none;
+      background: $color-darker-gray;
+      border-bottom: solid 1px adjust-lightness($color-darker-gray, 2%);
+    }
+  }
+
+  .unread-notifications-counter {
+    @include border-radius($radius);
+    @include box-shadow(0 1px 1px rgba(0, 0, 0, .7));
+    position: absolute;
+    bottom: -3px;
+    right: 22px;
+    background-color: #dc0d17;
+    background-image: linear-gradient(#fa3c45, #dc0d17);
+    font-size: 10px;
+    overflow: hidden;
+    .count-indicator {
+      @include text-shadow(0 -1px 0 rgba(0, 0, 0, .4));
+      color: $color-white;
+      height: 10px;
+      padding: 0 3px;
+      text-align: center;
+    }
+  }
+}

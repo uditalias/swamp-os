@@ -1,0 +1,29 @@
+.panel-gripper {
+  @include transition(opacity 200ms);
+  @include opacity(0.7);
+  background: $color-dark-gray;
+  width: 100%;
+  height: 10px;
+  border-top: solid 1px adjust-lightness($color-dark-gray, 2%);
+  border-bottom: solid 1px adjust-lightness($color-dark-gray, -2%);
+  cursor:grab;
+  cursor:-moz-grab;
+  cursor:-webkit-grab;
+
+  .inner-gripper {
+    height: 4px;
+    width: 20px;
+    border-bottom: solid 1px adjust-lightness($color-dark-gray, -7%);
+    border-top: solid 1px adjust-lightness($color-dark-gray, -7%);
+  }
+
+  &:hover, &.active {
+    @include opacity(1);
+  }
+
+  &.active {
+    cursor:grabbing;
+    cursor:-moz-grabbing;
+    cursor:-webkit-grabbing;
+  }
+}

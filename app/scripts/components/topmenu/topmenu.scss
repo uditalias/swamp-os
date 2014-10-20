@@ -1,0 +1,116 @@
+.top-menu {
+  box-sizing: border-box;
+  width: 100%;
+  background: $color-dark-gray;
+  @include box-shadow(0 2px 2px -1px rgba(0, 0, 0, .52));
+  z-index: 2147483640;
+}
+
+.menu-tree {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      padding: 5px 10px;
+      color: $color-alt-white;
+      text-transform: capitalize;
+      white-space: nowrap;
+      font-weight: 300;
+
+      .sub-menu-icon {
+        display: none;
+      }
+
+      &:first-child {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        background: $color-darker-gray;
+        > ul.sub-menu {
+          display: block;
+          top: 100%;
+          left: 0;
+        }
+
+        &.disabled {
+          > ul.sub-menu {
+            display: none;
+          }
+        }
+      }
+
+      ul.sub-menu {
+        @include box-shadow(0 5px 20px rgba(0,0,0,.5));
+        @include border-radius(0 0 $radius $radius);
+        min-width: 160px;
+        background: $color-darker-gray;
+        position: absolute;
+        display: none;
+        border-bottom: solid 1px adjust-lightness($color-darker-gray, 2%);
+
+        li {
+          margin-left: 0;
+          display: block;
+          padding-left: 15px;
+          font-weight: 300;
+
+          &.disabled {
+            .menu-item-label, .sub-menu-icon {
+              color: #3b4358;
+            }
+          }
+
+          .sub-menu-icon {
+            position: absolute;
+            display: block;
+            top: 4px;
+            right: 5px;
+            font-size: 16px;
+          }
+
+          &.sub-menu-separator {
+            padding: 0 !important;
+            margin: 0 !important;
+            border-top: solid 1px adjust-lightness($color-darker-gray, -2%);
+            border-bottom: solid 1px adjust-lightness($color-darker-gray, 2%);
+            &:hover {
+              background: auto;
+            }
+          }
+
+          &:last-child {
+            @include border-radius(0 0 $radius $radius);
+            margin-bottom: 0;
+          }
+
+          &:hover {
+            background: $color-dark-gray;
+            color: $color-white;
+
+            &.disabled {
+              background: transparent;
+            }
+          }
+
+          ul.sub-menu {
+            @include border-radius(0 $radius $radius $radius);
+            top: 0;
+            left: 100%;
+
+            li {
+              &:first-child {
+                @include border-radius(0 $radius 0 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
