@@ -17,7 +17,7 @@ requirejs.config({
         EventEmitter: '../lib/eventEmitter/EventEmitter',
         Utils: './utils/utils',
         mixins: './utils/mixins',
-        env: './config/development',
+        env: './config/' + ENV_NAME,
         pnglib: './lib/identicon.js/pnglib',
         Identicon: './lib/identicon.js/identicon',
         MD5: '../lib/blueimp-md5/js/md5',

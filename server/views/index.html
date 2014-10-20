@@ -23,7 +23,7 @@
 <html>
     <head>
         <title>Swamp OS</title>
-        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="/styles/main.css" />
         <link rel="icon" type="image/png" href="/assets/images/favicon.png?rev=2">
     </head>
     <body>
@@ -31,8 +31,9 @@
         <script data-main="scripts/app" src="/lib/requirejs/require.js"></script>
         <script>
             //<![CDATA[
-            var socketConnectionString = "<%= socketConnectionString %>";
-            var swampVersion = "<%= swampVersion %>";
+            var ENV_NAME = "{{ envName }}";
+            var socketConnectionString = "{{ socketConnectionString }}";
+            var swampVersion = "{{ swampVersion }}";
             //]]>
         </script>
     </body>
