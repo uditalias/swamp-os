@@ -12,7 +12,7 @@ define([
             this.super();
 
             this.info = {
-                swampVersion: env.swampVersion
+                version: env.version
             }
         }
 

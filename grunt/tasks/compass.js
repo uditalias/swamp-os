@@ -10,7 +10,8 @@ module.exports = {
         options: {
             sassDir: '<%= path.app %>/styles/scss',
             cssDir: '<%= path.app %>/styles/',
-            specify: ['<%= path.app %>/styles/scss/main.scss', '<%= path.app %>/styles/scss/plugins.scss']
+            specify: ['<%= path.app %>/styles/scss/main.scss', '<%= path.app %>/styles/scss/plugins.scss'],
+            environment: 'production'
         }
     },
     server: {

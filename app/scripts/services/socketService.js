@@ -10,7 +10,7 @@ define(
         SocketService.prototype.setup = function() {
             this._connectionDeferred = Q.defer();
 
-            this._socket = io.connect(env.socketConnectionString, {
+            this._socket = io.connect('', {
                 reconnect: false
             });
 
@@ -24,6 +24,10 @@ define(
             this._socket.on(SOCKET_EVENTS.CONNECT, this._onSocketConnect.bind(this));
 
             this._socket.on(SOCKET_EVENTS.DISCONNECT, this._onSocketDisconnect.bind(this));
+
+            this._socket.on(SOCKET_EVENTS.ERROR, this._onSocketError.bind(this));
+
+            this._socket.on(SOCKET_EVENTS.CONNECT_FAILED, this._onSocketError.bind(this));
 
             this._socket.on(SOCKET_EVENTS.MESSAGE, this._onSocketMessage.bind(this));
 
@@ -45,6 +49,12 @@ define(
         };
 
         SocketService.prototype._onSocketDisconnect = function() {
+
+        };
+
+        SocketService.prototype._onSocketError = function(err) {
+
+            this._connectionDeferred.reject(err);
 
         };
 

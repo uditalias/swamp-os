@@ -1,6 +1,4 @@
-define(
-
-    [
+define([
         'AppDispatcher',
         'definitions/SwampLogsStore',
         'constants/ACTION_SOURCE',

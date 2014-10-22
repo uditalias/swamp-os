@@ -11661,6 +11661,24 @@ input:focus, input:active {
   font-size: 22px;
 }
 
+/* line 1, ../scripts/components/error/error.scss */
+.error {
+  background: url(../assets/images/theme-1.gif) repeat top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+/* line 10, ../scripts/components/error/error.scss */
+.error .error-text {
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 22px;
+}
+
 /* line 1, ../scripts/components/topstatus/topstatus.scss */
 .top-status {
   background: #262c3a;

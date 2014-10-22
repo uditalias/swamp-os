@@ -60,7 +60,7 @@ define(['EventEmitter', 'services/serializeService', 'definitions/SwampPlugin', 
 
     function _swampPluginDescriptorLoaded(path, descriptor) {
 
-        descriptor.version = env.swampVersion;
+        descriptor.version = env.version;
 
         var serialized = serializeService.serializeSwampPlugin(descriptor, path);
 

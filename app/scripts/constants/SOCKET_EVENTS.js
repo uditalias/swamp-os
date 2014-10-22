@@ -1,6 +1,8 @@
 define(function() {
     return {
         "CONNECT": "connect",
+        "ERROR": "error",
+        "CONNECT_FAILED": "connect_failed",
         "DISCONNECT": "disconnect",
         "MESSAGE": "message",
         "SWAMP_INITIAL": "swamp.initialData",

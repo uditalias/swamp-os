@@ -1,6 +1,4 @@
-define(
-
-    [
+define([
         'AppDispatcher',
         'definitions/SwampPluginsStore',
         'definitions/SwampPlugin',

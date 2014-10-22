@@ -12,6 +12,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dev', ['connect', 'watch']);
 
-    grunt.registerTask('build', []);
+    grunt.registerTask('build', [
+        'clean:dist',
+        'react',
+        'compass:dist',
+        'copy:dist',
+        'cssmin:dist',
+        'uglify:dist'
+    ]);
 
 };

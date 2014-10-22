@@ -1,5 +1,7 @@
 "use strict";
-var appolo = require('appolo-express');
+var appolo  = require('appolo-express'),
+    path    = require('path'),
+    version = require(path.join(process.cwd(), 'package.json')).version;
 
 module.exports = appolo.Controller.define({
     $config:{
@@ -14,7 +16,8 @@ module.exports = appolo.Controller.define({
 
     index: function(req, res) {
         this.render('index', {
-            envName: this.env.type
+            envName: this.env.type,
+            version: version
         });
     }
 });

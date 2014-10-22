@@ -1,0 +1,16 @@
+.error {
+  background: url(../assets/images/theme-1.gif) repeat top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  .error-text {
+    @include text-shadow(0 2px 1px rgba(0,0,0,0.3));
+    color: $color-white;
+    font-weight: 500;
+    font-size: 22px;
+  }
+}

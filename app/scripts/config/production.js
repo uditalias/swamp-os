@@ -1,7 +1,6 @@
 define(function() {
 
     return {
-        socketConnectionString: socketConnectionString,
-        swampVersion: swampVersion
+        version: version
     }
 });
