@@ -1,4 +1,26 @@
 "use strict";
-module.exports = function (app, environment) {
+var appolo      = require('appolo-express'),
+    express     = appolo.express,
+    env         = appolo.environment,
+    _           = require('lodash'),
+    passport    = require('passport'),
+    session     = require('express-session'),
+    mongoStore  = require('connect-mongo')(session);
 
+
+module.exports = function (app) {
+
+    app.use(session({
+        secret: env.session_secret,
+        saveUninitialized: true,
+        resave: true,
+        cookie: { path: '/', httpOnly: true, secure: false, maxAge: null },
+        store: new mongoStore({
+            url: env.mongodb,
+            collection: 'sessions'
+        })
+    }));
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 };
