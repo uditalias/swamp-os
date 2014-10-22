@@ -50,7 +50,7 @@ define([
                             {this._buildWindows()}
                         </div>
                         <div className="swamp-version">
-                            v{env.swampVersion}
+                            v{env.version}
                         </div>
                     </div>
                     );
