@@ -1,0 +1,27 @@
+{
+  "name": "appolo-flex",
+  "version": "0.0.7",
+  "homepage": "https://github.com/shmoop207/appolo-flex",
+  "authors": [
+    "roman svichar <shmoop207@gmail.com>",
+    "udi.talias <udi.talias@gmail.com>"
+  ],
+  "description": "css flex framework",
+  "main": "dist/framework.min.css",
+  "keywords": [
+    "flex",
+    "css",
+    "sass",
+    "layout",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ".sass-cache",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

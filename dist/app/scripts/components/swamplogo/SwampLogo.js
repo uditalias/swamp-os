@@ -1,0 +1,1 @@
+define(["react"],function(a){var b=a.createClass({displayName:"SwampLogo",render:function(){return a.DOM.div({className:"swamp-logo"},a.DOM.h1({className:"text-36 w700"},a.DOM.div(null,"Swamp"),a.DOM.span(null,"beta")))}});return b});

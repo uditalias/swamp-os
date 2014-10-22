@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/style/main.css" />
+
+        <script type="text/javascript">
+
+            var services = SAPI.services.getAll();
+
+            SAPI.on('message', function(service) {
+                document.querySelector('body').innerText = service;
+            });
+
+
+            function _setMenuTree() {
+                var tree = {
+                    services: {
+                        items: {}
+                    }
+                };
+
+                var id;
+                for(id in services) {
+                    tree.services.items[services[id].name] = {
+                        callback: function(serviceId) {
+                            document.querySelector('body').innerText = services[serviceId].name;
+                        }.bind(this, id)
+                    }
+                }
+
+                SAPI.setMenuTree(tree);
+            }
+
+            _setMenuTree();
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

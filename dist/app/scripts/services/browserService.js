@@ -1,0 +1,1 @@
+define(["actions/client"],function(a){function b(){c()}function c(){window.onblur=d,window.onfocus=e}function d(){a.browserBlured()}function e(){a.browserFocused()}return{initialize:b}});

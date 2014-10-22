@@ -1,0 +1,36 @@
+{
+  "name": "appolo-flex",
+  "version": "0.0.7",
+  "homepage": "https://github.com/shmoop207/appolo-flex",
+  "authors": [
+    "roman svichar <shmoop207@gmail.com>",
+    "udi.talias <udi.talias@gmail.com>"
+  ],
+  "description": "css flex framework",
+  "main": "dist/framework.min.css",
+  "keywords": [
+    "flex",
+    "css",
+    "sass",
+    "layout",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ".sass-cache",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.7",
+    "commit": "b7586b4dc411be9a2825214d063cb1c469d10dd6"
+  },
+  "_source": "git://github.com/shmoop207/appolo-flex.git",
+  "_target": "~0.0.6",
+  "_originalSource": "appolo-flex"
+}

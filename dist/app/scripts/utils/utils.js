@@ -1,0 +1,1 @@
+define(function(){return{translateObjectKey:function(a){return a=a?a.replace(/_/g," "):""}}});

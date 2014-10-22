@@ -1,0 +1,1 @@
+define(function(){var a={position:{top:0,left:0},size:{width:800,height:500},zIndex:0,minWidth:600,minHeight:400,minimizable:!0,maximizable:!0,resizable:!0,draggable:!0};return a});

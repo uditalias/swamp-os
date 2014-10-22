@@ -1,0 +1,1 @@
+define(["EventEmitter"],function(a){function b(b){this.super=a,this.super(),this._menuItems=b}var c="change";return b.prototype=new a,b.prototype.getAll=function(){return this._menuItems},b.prototype.emitChange=function(){this.emitEvent(c)},b.prototype.addChangeListener=function(a){this.on(c,a)},b.prototype.removeChangeListener=function(a){this.off(c,a)},b});

@@ -1,0 +1,1 @@
+define(["react"],function(a){var b=a.createClass({displayName:"Loading",render:function(){return a.DOM.div({className:"loading flex flex-align-center flex-pack-center"},a.DOM.div(null,a.DOM.div({className:"loading-text"},"Loading Swamp...")))}});return b});

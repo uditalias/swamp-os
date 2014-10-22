@@ -1,0 +1,1 @@
+define(["EventEmitter"],function(a){function b(){this.super=a,this.super(),this._iconsRepository={}}var c="change";return b.prototype=new a,b.prototype.getAll=function(){return this._iconsRepository},b.prototype.emitChange=function(){this.emitEvent(c)},b.prototype.addChangeListener=function(a){this.on(c,a)},b.prototype.removeChangeListener=function(a){this.off(c,a)},b});

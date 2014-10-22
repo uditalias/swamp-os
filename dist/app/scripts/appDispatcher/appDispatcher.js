@@ -1,0 +1,1 @@
+define(["definitions/Dispatcher","constants/ACTION_SOURCE"],function(a,b){function c(){this.super=a,this.super()}return c.prototype=new a,c.prototype.dispatchClientAction=function(a){this.dispatch({source:b.CLIENT_ACTION,action:a})},c.prototype.dispatchServerAction=function(a){this.dispatch({source:b.SERVER_ACTION,action:a})},new c});

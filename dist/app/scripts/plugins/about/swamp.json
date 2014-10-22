@@ -1,0 +1,18 @@
+{
+    "name": "internal-about-swamp",
+    "version": "*",
+    "main": "app/index.html",
+    "config": {
+        "type": "window",
+        "title": "About Swamp",
+        "window": {
+            "size": {
+                "width": 450,
+                "height": 350
+            },
+            "maximizable": false,
+            "minimizable": false,
+            "resizable": false
+        }
+    }
+}

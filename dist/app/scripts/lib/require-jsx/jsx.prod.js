@@ -1,0 +1,1 @@
+"use strict";define(function(){var a={};return{write:function(b,c,d){if(a.hasOwnProperty(c)){var e=a[c];d.asModule(b+"!"+c,e)}},version:"0.1",load:function(a,b,c){b([a],function(a){c(a)})}}});

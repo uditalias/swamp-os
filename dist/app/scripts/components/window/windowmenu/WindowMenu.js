@@ -1,0 +1,1 @@
+define(["react","jsx!components/topmenu/menuitem/MenuItem","jsx!utils/jsxUtils"],function(a,b,c){var d=a.createClass({displayName:"WindowMenu",render:function(){return a.DOM.div({className:"window-menu flex"},a.DOM.div({className:"menu-tree flex-1"},c.buildMenuTree(this.props.items)))}});return d});

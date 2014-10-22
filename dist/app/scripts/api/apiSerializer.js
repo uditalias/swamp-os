@@ -1,0 +1,1 @@
+define(function(){return{serializeSwampService:function(a){return{id:a.id,name:a.name,description:a.description,path:a.path,script:a.script,isRunning:a.isRunning,runningEnvironment:a.runningEnvironment,pid:a.pid,environments:a.environments,startTime:a.startTime}}}});
