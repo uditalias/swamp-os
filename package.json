@@ -2,8 +2,6 @@
   "name": "swamp-os",
   "version": "0.0.1",
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
