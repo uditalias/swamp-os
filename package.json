@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "test": "grunt test",
-    "postinstall": "bower install"
+    "postinstall": "bower install && grunt build"
   },
   "repository": {
     "type": "git",
