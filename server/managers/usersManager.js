@@ -7,7 +7,7 @@ module.exports = EventDispatcher.define({
     $config: {
         id: 'usersManager',
         singleton: true,
-        inject: ['logger', 'env', 'UserModel']
+        inject: ['logger', 'env', 'UserModel', 'util']
     },
 
     findUserById: function (id) {
@@ -47,13 +47,20 @@ module.exports = EventDispatcher.define({
         user.save(function (err) {
             if (err) {
                 this.logger.error("failed to save user", {err: err});
-                deferred.reject(err);
+                deferred.reject(this.util.parseMongoError(err, this._getSignupErrorMessages()));
             } else {
                 deferred.resolve(user);
             }
         }.bind(this));
 
         return deferred.promise;
+    },
+
+    sendActivationMail: function(user) {
+
+
+
+        return user.toObject();
     },
 
     updateUser: function (params) {
@@ -109,5 +116,14 @@ module.exports = EventDispatcher.define({
         }.bind(this));
 
         return deferred.promise;
+    },
+
+    _getSignupErrorMessages: function() {
+        return {
+            11000: {
+                username: ['Username taken'],
+                email: ['Email address in use, try to login']
+            }
+        }
     }
 });

@@ -4,13 +4,13 @@ define(
     [
         'react',
         'jsx!components/swampos/SwampOS',
-        'jsx!components/error/Error',
+        'jsx!components/auth/Auth',
         'jsx!components/loading/Loading',
         'services/browserService',
-        'services/socketService'
+        'services/authService'
     ],
 
-    function(React, SwampOS, Error, Loading, browserService, socketService) {
+    function(React, SwampOS, Auth, Loading, browserService, authService) {
 
         function _initialize() {
 
@@ -20,36 +20,39 @@ define(
 
                 React.renderComponent(<Loading />, $('.app-container')[0]);
 
-                socketService.setup()
-                    .then(_onSwampSocketConnectionSuccess)
-                    .catch(_onSwampSocketConnectionFail);
-
+                authService.isAuthenticated()
+                    .then(_onUserAuthenticatedSuccess)
+                    .catch(_onUserAuthenticatedFail);
             });
 
         }
 
-        function _onSwampSocketConnectionSuccess() {
+        function _onUserAuthenticatedSuccess() {
 
             React.unmountComponentAtNode($('.app-container')[0]);
 
-            React.renderComponent(<SwampOS />, $('.app-container')[0]);
+            React.renderComponent(<SwampOS onLogout={_onLogout} />, $('.app-container')[0]);
 
         }
 
-        function _onSwampSocketConnectionFail(err) {
-
-            if(err) {
-                try {
-                    err = JSON.parse(err);
-                } catch(e) {
-                    err = err;
-                }
-            }
+        function _onUserAuthenticatedFail(err) {
 
             React.unmountComponentAtNode($('.app-container')[0]);
 
-            React.renderComponent(<Error error={err} />, $('.app-container')[0]);
+            React.renderComponent(<Auth onLogin={_onLogin} onSignup={_onSignup} />, $('.app-container')[0]);
 
+        }
+
+        function _onLogin() {
+            _onUserAuthenticatedSuccess();
+        }
+
+        function _onSignup() {
+            
+        }
+
+        function _onLogout() {
+            _onUserAuthenticatedFail();
         }
 
         return {

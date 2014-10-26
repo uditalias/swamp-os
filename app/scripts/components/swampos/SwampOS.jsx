@@ -13,9 +13,11 @@ define([
         'stores/swampPluginsStore',
         'stores/menuItemsStore',
         'stores/swampWindowsStore',
-        'stores/swampIconsStore'
+        'stores/swampIconsStore',
+        'services/authService'
     ],
-    function(React, TopMenu, Desktop, NotificationsPanel, ApplicationPrompt, ContextMenu, swampApplicationStore, swampLogsStore, swampServicesStore, swampPluginsStore, menuItemsStore, swampWindowsStore, swampIconsStore) {
+
+    function(React, TopMenu, Desktop, NotificationsPanel, ApplicationPrompt, ContextMenu, swampApplicationStore, swampLogsStore, swampServicesStore, swampPluginsStore, menuItemsStore, swampWindowsStore, swampIconsStore, authService) {
 
         var THROTTLED_CHANGE_HANDLER_TIME = 300;
 
@@ -98,7 +100,11 @@ define([
 
             _onChange: function() {
 
-                this.setState(getAppState());
+                if(!authService.isLoggedIn()) {
+                    this.props.onLogout();
+                } else {
+                    this.setState(getAppState());
+                }
 
             },
 

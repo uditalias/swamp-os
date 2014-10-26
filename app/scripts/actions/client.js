@@ -121,12 +121,13 @@ define(['AppDispatcher', 'constants/CLIENT_ACTION_TYPE'], function(AppDispatcher
             });
         },
 
-        applicationPrompt: function(promptText, onConfirm, onCancel) {
+        applicationPrompt: function(promptText, onConfirm, onCancel, hideCancel) {
             AppDispatcher.dispatchClientAction({
                 actionType: CLIENT_ACTION_TYPE.APPLICATION_PROMPT,
                 promptText: promptText,
                 onConfirm: onConfirm,
-                onCancel: onCancel
+                onCancel: onCancel,
+                hideCancel: hideCancel
             });
         },
 
@@ -166,6 +167,12 @@ define(['AppDispatcher', 'constants/CLIENT_ACTION_TYPE'], function(AppDispatcher
         clearContextMenu: function() {
             AppDispatcher.dispatchClientAction({
                 actionType: CLIENT_ACTION_TYPE.CLEAR_CONTEXT_MENU
+            });
+        },
+
+        logout: function() {
+            AppDispatcher.dispatchClientAction({
+                actionType: CLIENT_ACTION_TYPE.LOGOUT
             });
         }
     };

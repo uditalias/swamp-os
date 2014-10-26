@@ -68,6 +68,7 @@ define([
                                 onClose={this._onCloseClick}
                                 maximizable={this.props.descriptor.isMaximizable()}
                                 minimizable={this.props.descriptor.isMinimizable()}
+                                closable={this.props.descriptor.isClosable()}
                                 text={this.props.descriptor.getTitle()}
                             />
 
@@ -101,6 +102,8 @@ define([
                         return <SwampServiceWindowContent service={this.props.descriptor.getPayload()} windowId={this.props.descriptor.id} />;
                     case WINDOW_TYPE.PLUGIN:
                         return <SwampPluginWindowContent plugin={this.props.descriptor.getPayload()} onPluginRequest={this._onPluginRequest} windowId={this.props.descriptor.id} />;
+                    case WINDOW_TYPE.SCREEN:
+                        return this.props.children;
                 }
             },
 
@@ -247,13 +250,13 @@ define([
 
             _onMouseDown: function(e) {
                 e.stopPropagation();
-                e.preventDefault();
+                //e.preventDefault();
 
                 if(!this.props.descriptor.isFocused()) {
                     clientActions.focusWindow(this.props.descriptor.id);
                 }
 
-                return false;
+                //return false;
             },
 
             _onCloseClick: function() {

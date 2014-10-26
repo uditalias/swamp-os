@@ -8,6 +8,10 @@ body, html {
   overflow: hidden;
 }
 
+body {
+    background: url(../assets/images/theme-1.gif) repeat top left;
+}
+
 input {
   &:focus, &:active {
     outline: none;
@@ -40,4 +44,8 @@ input {
   background: adjust-lightness($color-yellow, 30%);
   border-bottom: dashed 1px adjust-lightness($color-dark-gray, 30%);
   padding: 0 2px;
+}
+
+.visibility-hidden {
+    visibility: hidden;
 }

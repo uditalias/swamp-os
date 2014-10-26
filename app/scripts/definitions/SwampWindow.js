@@ -14,7 +14,7 @@ define([
             this._payload = payload;
             this._payloadId = this._payload.name;
             this._type = type;
-            this._title = (this._type == WINDOW_TYPE.PLUGIN && this._payload.config && this._payload.config.title) ? this._payload.config.title : '';
+            this._title = (this._payload.config && this._payload.config.title) ? this._payload.config.title : '';
             this._menuTree = null;
             this._focused = false;
             this._zoomed = false;
@@ -112,6 +112,10 @@ define([
 
         SwampWindow.prototype.isMaximizable = function() {
             return this.options.maximizable;
+        };
+
+        SwampWindow.prototype.isClosable = function() {
+            return this.options.closable;
         };
 
         SwampWindow.prototype.getTitle = function() {

@@ -2,7 +2,7 @@
 
 module.exports = {
 
-    name: 'all',
+    name: 'production',
 
     port: 80
 };

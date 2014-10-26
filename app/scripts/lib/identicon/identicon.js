@@ -11,10 +11,11 @@
  */
 
 (function() {
-    Identicon = function(hash, size, margin){
+    Identicon = function(hash, size, margin, bg){
         this.hash   = hash;
         this.size   = size   || 64;
         this.margin = margin || .08;
+        this.bg = bg || [240, 240, 240];
     }
 
     Identicon.prototype = {
@@ -29,8 +30,9 @@
                 cell    = Math.floor((size - (margin * 2)) / 5),
                 image   = new PNGlib(size, size, 256);
 
+
             // light-grey background
-            var bg      = image.color(240, 240, 240);
+            var bg      = image.color.apply(image, this.bg);
 
             // foreground is last 7 chars as hue at 50% saturation, 70% brightness
             var rgb     = this.hsl2rgb(parseInt(hash.substr(-7), 16) / 0xfffffff, .5, .7),

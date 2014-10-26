@@ -9,7 +9,6 @@ var paths = {
     Q: '../lib/q/q',
     moment: '../lib/momentjs/min/moment.min',
     socketio: '../lib/socket.io-client/dist/socket.io.min',
-    react: '../lib/react/react.min',
     EventEmitter: '../lib/eventEmitter/EventEmitter.min',
     Utils: './utils/utils',
     mixins: './utils/mixins',
@@ -23,8 +22,10 @@ var paths = {
 if(ENV_NAME == 'development') {
     paths['JSXTransformer'] = '../lib/react/JSXTransformer';
     paths['jsx'] = './lib/require-jsx/jsx';
+    paths['react'] = '../lib/react/react';
 } else {
     paths['jsx'] = './lib/require-jsx/jsx.prod';
+    paths['react'] = '../lib/react/react.min';
 }
 
 requirejs.config({

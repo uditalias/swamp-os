@@ -9,7 +9,7 @@
   cursor: pointer;
 
   &[disabled] {
-    @include opacity(0.4);
+    @include opacity(0.8);
     &:active, &.active {
       @include box-shadow(none);
     }

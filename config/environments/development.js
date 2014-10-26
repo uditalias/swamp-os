@@ -2,7 +2,9 @@
 
 module.exports = {
 
-    name: 'all',
+    name: 'development',
+
+    app_domain: 'http://swamp:8080/',
 
     port: 8080
 };

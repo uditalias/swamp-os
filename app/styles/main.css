@@ -10950,28 +10950,33 @@ body, html {
   overflow: hidden;
 }
 
-/* line 12, scss/globals/common.scss */
+/* line 11, scss/globals/common.scss */
+body {
+  background: url(../assets/images/theme-1.gif) repeat top left;
+}
+
+/* line 16, scss/globals/common.scss */
 input:focus, input:active {
   outline: none;
 }
 
-/* line 17, scss/globals/common.scss */
+/* line 21, scss/globals/common.scss */
 .app-container {
   width: 100vw;
   height: 100vh;
 }
 
-/* line 22, scss/globals/common.scss */
+/* line 26, scss/globals/common.scss */
 .hidden {
   display: none;
 }
 
-/* line 26, scss/globals/common.scss */
+/* line 30, scss/globals/common.scss */
 .break-word {
   word-wrap: break-word;
 }
 
-/* line 30, scss/globals/common.scss */
+/* line 34, scss/globals/common.scss */
 .spread {
   position: absolute;
   top: 0;
@@ -10980,7 +10985,7 @@ input:focus, input:active {
   right: 0;
 }
 
-/* line 38, scss/globals/common.scss */
+/* line 42, scss/globals/common.scss */
 .hightlight {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -10988,6 +10993,11 @@ input:focus, input:active {
   background: #fbeccb;
   border-bottom: dashed 1px #7481a1;
   padding: 0 2px;
+}
+
+/* line 49, scss/globals/common.scss */
+.visibility-hidden {
+  visibility: hidden;
 }
 
 /* line 1, scss/globals/buttons.scss */
@@ -11012,8 +11022,8 @@ input:focus, input:active {
 }
 /* line 11, scss/globals/buttons.scss */
 .btn[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-  opacity: 0.4;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
 }
 /* line 13, scss/globals/buttons.scss */
 .btn[disabled]:active, .btn[disabled].active {
@@ -11169,15 +11179,14 @@ input:focus, input:active {
   -moz-transition: all 150ms;
   transition: all 150ms;
   width: 100%;
-  background: url(../assets/images/theme-1.gif) repeat top left;
   border-top: solid 1px #274686;
   position: relative;
 }
-/* line 8, ../scripts/components/desktop/desktop.scss */
+/* line 7, ../scripts/components/desktop/desktop.scss */
 .desktop.notifications-panel-open {
   background-position-x: -384px;
 }
-/* line 12, ../scripts/components/desktop/desktop.scss */
+/* line 11, ../scripts/components/desktop/desktop.scss */
 .desktop .windows-canvas {
   z-index: 50;
   position: absolute;
@@ -11188,7 +11197,7 @@ input:focus, input:active {
   margin: auto;
   overflow: hidden;
 }
-/* line 23, ../scripts/components/desktop/desktop.scss */
+/* line 22, ../scripts/components/desktop/desktop.scss */
 .desktop .swamp-version {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -11677,6 +11686,54 @@ input:focus, input:active {
   color: #ffffff;
   font-weight: 500;
   font-size: 22px;
+}
+
+/* line 1, ../scripts/components/auth/auth.scss */
+.auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+/* line 12, ../scripts/components/auth/auth.scss */
+.auth .auth-window .user-photo img {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 17, ../scripts/components/auth/auth.scss */
+.auth .auth-window .auth-window-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 3px 3px;
+  border-top: solid 1px #424c62;
+  background: #3a4359;
+}
+/* line 29, ../scripts/components/auth/auth.scss */
+.auth .auth-window form input[type=text], .auth .auth-window form input[type=password] {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  border-bottom: solid 1px transparent;
+  width: 100%;
+  padding: 5px;
+}
+/* line 36, ../scripts/components/auth/auth.scss */
+.auth .auth-window form input[type=text].invalid, .auth .auth-window form input[type=password].invalid {
+  border-color: #e9776e;
+}
+
+/* line 45, ../scripts/components/auth/auth.scss */
+ul.auth-errors-list li:first-letter {
+  text-transform: capitalize;
 }
 
 /* line 1, ../scripts/components/topstatus/topstatus.scss */

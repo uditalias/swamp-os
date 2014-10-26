@@ -93,6 +93,10 @@ define(['moment'], function(moment) {
 
             return data.environments;
 
+        },
+
+        serializeAPIReponse: function(data) {
+            return data.responseJSON || {};
         }
 
     };

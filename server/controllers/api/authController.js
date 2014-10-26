@@ -54,7 +54,7 @@ module.exports = appolo.Controller.define({
 
     isLoggedIn: function(req, res){
         if(req.isAuthenticated()) {
-            return this.sendOk(req.user)
+            return this.sendOk(req.user.toObject())
         } else {
             return res.status(401).send("Unauthorized");
         }
@@ -68,11 +68,19 @@ module.exports = appolo.Controller.define({
 
                 this.logger.error('Login Error', { err: err.toString() });
 
-                this.sendServerError(err.toString());
+                this.sendServerError("InvalidUserNameOrPassword");
 
-            } else if (user && user.activated) {
+            } else if (user) {
 
-                this._login(user);
+                if(user.activated) {
+
+                    this._login(user);
+
+                } else {
+
+                    this.sendServerError("UserNotActivated");
+
+                }
 
             } else {
 
@@ -88,7 +96,7 @@ module.exports = appolo.Controller.define({
 
         this.req.logout();
 
-        this.sendOk();
+        this.sendOk({});
     },
 
     signup: function(req, res) {
@@ -100,6 +108,7 @@ module.exports = appolo.Controller.define({
         };
 
         this.usersManager.createUser(params)
+            .then(this.usersManager.sendActivationMail.bind(this))
             .then(this.sendOk.bind(this))
             .fail(this.sendServerError.bind(this));
     },
@@ -124,7 +133,7 @@ module.exports = appolo.Controller.define({
 
             this.logger.info('User Login', { user: user.toObject() });
 
-            this.sendOk(user);
+            this.sendOk(user.toObject());
         }
     },
 

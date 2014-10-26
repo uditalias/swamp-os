@@ -3,6 +3,7 @@ define([
     'definitions/MenuItemsStore',
     'actions/client',
     'env',
+    'services/authService',
     'constants/SWAMP_MODE',
     'constants/ACTION_SOURCE',
     'constants/SERVER_ACTION_TYPE',
@@ -11,7 +12,7 @@ define([
     'constants/PROMPTS',
     'constants/INTERNAL_PLUGINS',
     'stores/swampPluginsStore'
-], function(AppDispatcher, MenuItemsStore, clientActions, env, SWAMP_MODE, ACTION_SOURCE, SERVER_ACTION_TYPE, CLIENT_ACTION_TYPE, WINDOW_OPEN_TRIGGER, PROMPTS, INTERNAL_PLUGINS, swampPluginsStore) {
+], function(AppDispatcher, MenuItemsStore, clientActions, env, authService, SWAMP_MODE, ACTION_SOURCE, SERVER_ACTION_TYPE, CLIENT_ACTION_TYPE, WINDOW_OPEN_TRIGGER, PROMPTS, INTERNAL_PLUGINS, swampPluginsStore) {
 
     var _menu = {
         swamp: {
@@ -42,7 +43,9 @@ define([
                     }
                 },
                 logout: {
-                    callback: function() {}
+                    callback: function() {
+                        authService.logout();
+                    }
                 }
             }
         },
@@ -168,15 +171,16 @@ define([
 
     function _handleClientAction(data) {
 
+        var emitChange = false;
         var action = data.action;
 
         switch(action.actionType) {
-            case CLIENT_ACTION_TYPE.OPEN_SERVICE_WINDOW:
-                break;
-
-            case CLIENT_ACTION_TYPE.CLOSE_WINDOW:
+            case CLIENT_ACTION_TYPE.LOGOUT:
+                emitChange = true;
                 break;
         }
+
+        return emitChange;
 
     }
 

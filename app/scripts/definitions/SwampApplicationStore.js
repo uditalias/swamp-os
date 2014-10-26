@@ -12,13 +12,14 @@ define(['EventEmitter'], function(EventEmitter) {
 
     SwampApplicationStore.prototype = new EventEmitter;
 
-    SwampApplicationStore.prototype.setPrompt = function(promptText, onConfirm, onCancel) {
+    SwampApplicationStore.prototype.setPrompt = function(promptText, onConfirm, onCancel, hideCancel) {
         this._prompt = {
             text: promptText,
             onConfirm: onConfirm || function() {},
             onCancel: onCancel || function() {},
             okBtnText: 'OK',
-            cancelBtnText: 'Cancel'
+            cancelBtnText: 'Cancel',
+            hideCancel: !!hideCancel
         };
     };
 

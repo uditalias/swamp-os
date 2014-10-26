@@ -30,7 +30,7 @@ define([
 
                 case CLIENT_ACTION_TYPE.APPLICATION_PROMPT:
 
-                    swampApplicationStore.setPrompt(action.promptText, action.onConfirm, action.onCancel);
+                    swampApplicationStore.setPrompt(action.promptText, action.onConfirm, action.onCancel, action.hideCancel);
 
                     emitChange = true;
 

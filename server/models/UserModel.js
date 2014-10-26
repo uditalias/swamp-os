@@ -36,6 +36,14 @@ userSchema.pre('save', function(next) {
     });
 });
 
+userSchema.methods.protect = function() {
+    delete this._id;
+    delete this.password;
+    delete this.__v;
+
+    return this;
+}
+
 userSchema.methods.comparePassword = function(candidatePassword) {
 
     var deferred = Q.defer();

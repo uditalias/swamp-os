@@ -23,6 +23,7 @@ define(function() {
         "STOP_ALL_RUNNING_SERVICES": "stop.all.running.services",
         "RESTART_ALL_RUNNING_SERVICES": "restart.all.running.services",
         "SHOW_CONTEXT_MENU": "show.context.menu",
-        "CLEAR_CONTEXT_MENU": "clear.context.menu"
+        "CLEAR_CONTEXT_MENU": "clear.context.menu",
+        "LOGOUT": "logout"
     }
 });

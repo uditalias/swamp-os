@@ -1,6 +1,7 @@
 define(function() {
     return {
         "SERVICE": "window.service",
-        "PLUGIN": "window.plugin"
+        "PLUGIN": "window.plugin",
+        "SCREEN": "window.screen"
     }
 });

@@ -15,7 +15,8 @@ define(function() {
         minimizable: true,
         maximizable: true,
         resizable: true,
-        draggable: true
+        draggable: true,
+        closable: true
     };
 
     return defaults;

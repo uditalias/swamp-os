@@ -11,6 +11,7 @@ var appolo      = require('appolo-express'),
 module.exports = function (app) {
 
     app.use(session({
+        name: 'swamp.os.sid',
         secret: env.session_secret,
         saveUninitialized: true,
         resave: true,
@@ -23,4 +24,11 @@ module.exports = function (app) {
 
     app.use(passport.initialize());
     app.use(passport.session());
+
+    app.use(function(req, res, next) {
+
+        res.set('X-Powered-By', 'SwampOS_' + env.version);
+        next();
+
+    });
 };

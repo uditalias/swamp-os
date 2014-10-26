@@ -8300,8 +8300,8 @@ a.link-no-style, a.link-no-style:hover {
 }
 /* line 11, scss/globals/buttons.scss */
 .btn[disabled] {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-  opacity: 0.4;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
 }
 /* line 13, scss/globals/buttons.scss */
 .btn[disabled]:active, .btn[disabled].active {

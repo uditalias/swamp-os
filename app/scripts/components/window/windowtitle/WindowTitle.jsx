@@ -23,6 +23,15 @@ define(['react'], function(React) {
                     );
             }
 
+            var close;
+            if(this.props.closable) {
+                close = (
+                    <div className="window-action" onClick={this._onCloseClick}>
+                        <i className="fa fa-times"></i>
+                    </div>
+                );
+            }
+
             return (
                 <div className="window-title flex flex-align-center" onDoubleClick={this._onMinimizeClick}>
                     <div className="flex-1 title-text">
@@ -31,9 +40,7 @@ define(['react'], function(React) {
                     <div className="flex">
                         {indicator}
                         {zoom}
-                        <div className="window-action" onClick={this._onCloseClick}>
-                            <i className="fa fa-times"></i>
-                        </div>
+                        {close}
                     </div>
                 </div>
                 );
