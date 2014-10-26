@@ -1,13 +1,14 @@
 "use strict";
 var EventDispatcher = require('appolo-express').EventDispatcher,
     _               = require('lodash'),
+    jwt             = require('jsonwebtoken'),
     Q               = require('q');
 
 module.exports = EventDispatcher.define({
     $config: {
         id: 'usersManager',
         singleton: true,
-        inject: ['logger', 'env', 'UserModel', 'util']
+        inject: ['logger', 'env', 'UserModel', 'util', 'mailSenderManager']
     },
 
     findUserById: function (id) {
@@ -58,7 +59,17 @@ module.exports = EventDispatcher.define({
 
     sendActivationMail: function(user) {
 
-
+        this.mailSenderManager.sendMail({
+            type: 'account_activation',
+            sender: this.env.mail_sender_address,
+            senderName: 'Swamp OS',
+            receiver: user.email,
+            receiverName: user.username,
+            payload: {
+                user: user.toObject(),
+                token: this._createActivationToken(user.email, user.username)
+            }
+        });
 
         return user.toObject();
     },
@@ -125,5 +136,9 @@ module.exports = EventDispatcher.define({
                 email: ['Email address in use, try to login']
             }
         }
+    },
+
+    _createActivationToken: function(email, username) {
+        return jwt.sign({ email: email, username: username }, this.env.json_token_secret);
     }
 });

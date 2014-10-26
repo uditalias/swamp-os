@@ -12,7 +12,15 @@ module.exports = {
 
     session_secret: '5fc86d4f76e4451f9da0fbee0e399593',
 
+    json_token_secret: '31d6c5069749415ea106b65e25555da7',
+
     app_domain: 'http://swamp.herokuapp.com/',
+
+    mail_subject: {
+        account_activation: 'Welcome to Swamp OS - Account Activation'
+    },
+
+    mail_sender_address: 'do-not-replay@swampos.com',
 
     port: 80
 };

@@ -1,0 +1,13 @@
+<% include ../mailLayoutsTemplates/swampMailDefaultHeader.ejs %>
+
+<div>
+
+    <%= user.username %>
+    <br />
+    <%= user.email %>
+    <br/>
+    <a href="<%= appDomain %>?activation_token=<%= token %>">activate</a>
+
+</div>
+
+<% include ../mailLayoutsTemplates/swampMailDefaultFooter.ejs %>

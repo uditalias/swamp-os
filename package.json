@@ -27,8 +27,9 @@
     "passport-local": "^1.0.0",
     "q": "^1.0.1",
     "socket.io": "^1.1.0",
-    "swig": "^1.4.2",
-    "winston": "0.7.3"
+    "ejs": "^1.0.0",
+    "winston": "0.7.3",
+    "mandrill-api": ">=1.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

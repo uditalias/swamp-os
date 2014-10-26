@@ -108,7 +108,7 @@ module.exports = appolo.Controller.define({
         };
 
         this.usersManager.createUser(params)
-            .then(this.usersManager.sendActivationMail.bind(this))
+            .then(this.usersManager.sendActivationMail.bind(this.usersManager))
             .then(this.sendOk.bind(this))
             .fail(this.sendServerError.bind(this));
     },
